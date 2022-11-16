@@ -56,3 +56,17 @@ object_get() {
 	done
 	echo ${!_object_ptr_}
 }
+
+object_del() {
+	local -a _object_stack_=( $1 )
+	while [[ ${#_object_stack_[@]} > 0 ]]; do
+		local _object_temp_=${_object_stack_[-1]}
+		unset _object_stack_[-1]
+		case $(unique_type ${_object_temp_}) in
+			'a' | 'A')
+				local -n _object_object_=${_object_temp_}
+				_object_stack_+=( ${_object_object_[@]} ) ;;
+		esac
+		unique_del $_object_temp_
+	done
+}

@@ -159,5 +159,3 @@ object_print_json() {
 			;;
 	esac
 }
-
-object_parse_json 

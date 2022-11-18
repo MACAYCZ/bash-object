@@ -1,4 +1,4 @@
-# bash-object - 2.1.0
+# bash-object - v2.1.0
 Using [bash-unique](https://github.com/MACAYCZ/bash-unique). ***Before use*** make sure that you have all libraries in same folder (also you can change source).
 
 # object.sh
